@@ -99,11 +99,8 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/projects/76/stages/421/implement#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #1
-
-    Output should contain total amount of purchases
-  time: "Sun, 30 Jul 2023 18:02:34 UTC"
+  message: Congratulations!
+  time: "Sun, 30 Jul 2023 18:52:23 UTC"
 record: -1
