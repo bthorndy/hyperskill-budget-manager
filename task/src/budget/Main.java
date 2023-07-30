@@ -14,9 +14,7 @@ public class Main {
                 String input = scanner.nextLine();
                 purchases.add(input);
                 double cost = Double.parseDouble(input.split("\\$")[1]);
-                System.out.println(cost);
                 total += cost;
-                System.out.println(total);
             }
 
             for (String purchase : purchases) {
