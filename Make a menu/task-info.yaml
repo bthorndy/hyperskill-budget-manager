@@ -203,6 +203,12 @@ files:
 
     }
   learner_created: false
+- name: src/budget/BudgetManager.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/76/stages/422/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 01 Aug 2023 07:10:21 UTC"
 record: 2

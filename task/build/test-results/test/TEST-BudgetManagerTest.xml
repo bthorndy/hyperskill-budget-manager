@@ -1,20 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-30T20:02:27" hostname="Bobbis-MBP" time="0.046">
+<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-01T07:10:20" hostname="Bobbis-MBP" time="0.072">
   <properties/>
-  <testcase name="start" classname="BudgetManagerTest" time="0.046"/>
+  <testcase name="start" classname="BudgetManagerTest" time="0.072"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-> Almond 250gm $35.43
-> LEGO DUPLO Town Farm Animals $10.10
-> Sensodyne Pronamel Toothpaste $19.74
-> Hershey's milk chocolate bars $8.54
-> Gildan LT $8.61
-Almond 250gm $35.43
-LEGO DUPLO Town Farm Animals $10.10
-Sensodyne Pronamel Toothpaste $19.74
-Hershey's milk chocolate bars $8.54
-Gildan LT $8.61
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 0
 
+Bye!
+?[1;31m
+Start test 2?[0m
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 0
+
+Bye!
+?[1;31m
+Start test 3?[0m
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 4
+
+Balance: $0.00
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 0
+
+Bye!
+?[1;31m
+Start test 4?[0m
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 1
+
+Enter income:
+> 400
+Income was added!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 4
+
+Balance: $400.00
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 1
+
+Enter income:
+> 200
+Income was added!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 4
+
+Balance: $600.00
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 0
+
+Bye!
+?[1;31m
+Start test 5?[0m
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 3
+
+The purchase list is empty.
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 1
+
+Enter income:
+> 600
+Income was added!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 2
+
+Enter purchase name:
+> Red Fuji Apple
+Enter its price:
+> 5.99
+Purchase was added!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 2
+
+Enter purchase name:
+> Eggs
+Enter its price:
+> 3.99
+Purchase was added!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 3
+
+Red Fuji Apple $5.99
+Eggs $3.99
+Total sum: $9.98
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 4
+
+Balance: $590.02
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+0) Exit
+> 0
+
+Bye!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
