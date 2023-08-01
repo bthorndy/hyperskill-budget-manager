@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-30T18:52:23" hostname="Bobbis-MBP" time="0.047">
+<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-30T20:02:27" hostname="Bobbis-MBP" time="0.046">
   <properties/>
-  <testcase name="start" classname="BudgetManagerTest" time="0.047"/>
+  <testcase name="start" classname="BudgetManagerTest" time="0.046"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 > Almond 250gm $35.43
-35.43
-35.43
 > LEGO DUPLO Town Farm Animals $10.10
-10.1
-45.53
 > Sensodyne Pronamel Toothpaste $19.74
-19.74
-65.27
 > Hershey's milk chocolate bars $8.54
-8.54
-73.81
 > Gildan LT $8.61
-8.61
-82.42
 Almond 250gm $35.43
 LEGO DUPLO Town Farm Animals $10.10
 Sensodyne Pronamel Toothpaste $19.74
