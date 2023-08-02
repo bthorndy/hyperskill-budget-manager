@@ -6,8 +6,7 @@ public class Main {
         BudgetManager manager = new BudgetManager();
 
         while (repeat) {
-            manager.displayMenu();
-            repeat = manager.selectAction();
+            repeat = manager.run();
         }
 
         System.out.println("Bye!");

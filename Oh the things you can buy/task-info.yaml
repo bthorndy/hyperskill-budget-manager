@@ -427,6 +427,18 @@ files:
         }
     }
   learner_created: true
+- name: src/budget/Purchase.java
+  visible: true
+  learner_created: true
+- name: src/budget/BudgetManagerCopy.java
+  visible: true
+  learner_created: true
+- name: src/budget/PurchaseType.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/76/stages/423/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Wed, 02 Aug 2023 07:21:07 UTC"
 record: 3

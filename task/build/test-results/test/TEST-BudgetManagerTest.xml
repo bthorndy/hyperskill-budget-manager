@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-01T07:10:20" hostname="Bobbis-MBP" time="0.072">
+<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-02T07:21:07" hostname="Bobbis-MBP" time="0.088">
   <properties/>
-  <testcase name="start" classname="BudgetManagerTest" time="0.072"/>
+  <testcase name="start" classname="BudgetManagerTest" time="0.088"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
+
 Choose your action:
 1) Add income
 2) Add purchase
@@ -15,6 +16,7 @@ Choose your action:
 Bye!
 ?[1;31m
 Start test 2?[0m
+
 Choose your action:
 1) Add income
 2) Add purchase
@@ -26,6 +28,7 @@ Choose your action:
 Bye!
 ?[1;31m
 Start test 3?[0m
+
 Choose your action:
 1) Add income
 2) Add purchase
@@ -47,6 +50,7 @@ Choose your action:
 Bye!
 ?[1;31m
 Start test 4?[0m
+
 Choose your action:
 1) Add income
 2) Add purchase
@@ -102,15 +106,6 @@ Choose your action:
 Bye!
 ?[1;31m
 Start test 5?[0m
-Choose your action:
-1) Add income
-2) Add purchase
-3) Show list of purchases
-4) Balance
-0) Exit
-> 3
-
-The purchase list is empty.
 
 Choose your action:
 1) Add income
@@ -132,25 +127,57 @@ Choose your action:
 0) Exit
 > 2
 
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
 Enter purchase name:
-> Red Fuji Apple
+> Milk
 Enter its price:
-> 5.99
+> 3.5
 Purchase was added!
 
-Choose your action:
-1) Add income
-2) Add purchase
-3) Show list of purchases
-4) Balance
-0) Exit
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
 > 2
 
 Enter purchase name:
-> Eggs
+> Men's Dual Defense Crew Socks 12 Pairs
 Enter its price:
-> 3.99
+> 13
 Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 3
+
+Enter purchase name:
+> Cinema
+Enter its price:
+> 8.73
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 5
+
 
 Choose your action:
 1) Add income
@@ -160,19 +187,70 @@ Choose your action:
 0) Exit
 > 3
 
-Red Fuji Apple $5.99
-Eggs $3.99
-Total sum: $9.98
 
-Choose your action:
-1) Add income
-2) Add purchase
-3) Show list of purchases
-4) Balance
-0) Exit
-> 4
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 1
 
-Balance: $590.02
+Food:
+Milk $3.50
+Total sum: $3.50
+
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 2
+
+Clothes:
+Men's Dual Defense Crew Socks 12 Pairs $13.00
+Total sum: $13.00
+
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 3
+
+Entertainment:
+Cinema $8.73
+Total sum: $8.73
+
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 5
+
+All:
+Milk $3.50
+Men's Dual Defense Crew Socks 12 Pairs $13.00
+Cinema $8.73
+Total sum: $25.23
+
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 6
+
 
 Choose your action:
 1) Add income
