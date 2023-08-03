@@ -401,6 +401,159 @@ files:
         }
     }
   learner_created: false
+- name: src/budget/BudgetManager.java
+  visible: true
+  text: "package budget;\n\nimport java.io.*;\nimport java.util.*;\n\npublic class\
+    \ BudgetManager {\n\n    private double balance;\n    private Scanner scanner;\n\
+    \    ArrayList<Purchase> purchases;\n    File purchaseFile;\n\n    public BudgetManager()\
+    \ {\n        this.balance = 0;\n        this.purchases = new ArrayList<>();\n\
+    \        this.scanner = new Scanner(System.in);\n        this.purchaseFile = new\
+    \ File(\"purchases.txt\");\n    }\n\n    /** @return Returns boolean indicating\
+    \ whether user wants to terminate the program. */\n    public boolean run() {\n\
+    \        displayActionMenu();\n\n        int action = selectMenuItem();\n\n  \
+    \      switch (action) {\n            case 1 -> addIncome();\n            case\
+    \ 2 -> addPurchase();\n            case 3 -> selectPurchaseList();\n         \
+    \   case 4 -> printBalance();\n            case 5 -> savePurchases();\n      \
+    \      case 6 -> loadPurchases();\n            case 0 -> {\n                return\
+    \ false;\n            }\n            default -> {\n                System.out.println(\"\
+    Not a valid selection. Please select from the menu.\");\n            }\n     \
+    \   }\n        return true;\n    }\n\n    public static void displayActionMenu()\
+    \ {\n        System.out.print(\"\"\"\n                \n                Choose\
+    \ your action:\n                1) Add income\n                2) Add purchase\n\
+    \                3) Show list of purchases\n                4) Balance\n     \
+    \           5) Save\n                6) Load\n                0) Exit\n      \
+    \          \"\"\");\n    }\n\n    private void loadPurchases() {\n        if (purchaseFileReady())\
+    \ {\n\n            try (Scanner fileReader = new Scanner(purchaseFile)) {\n  \
+    \              if (fileReader.hasNext()) {\n                    balance = Double.parseDouble(fileReader.nextLine());\n\
+    \                }\n\n                while (fileReader.hasNext()) {\n       \
+    \             String currentLine = fileReader.nextLine();\n\n                \
+    \    try {\n                        String[] purchaseStrings = currentLine.split(\"\
+    ,\");\n                        Purchase purchase = new Purchase(purchaseStrings[0],\n\
+    \                                Double.parseDouble(purchaseStrings[1]),\n   \
+    \                             PurchaseType.valueOf(purchaseStrings[2]));\n   \
+    \                     purchases.add(purchase);\n                    } catch (Exception\
+    \ e) {\n                        System.out.printf(\"Error processing purchase.\
+    \ Skipping line: %s%n\", currentLine);\n                        e.printStackTrace();\n\
+    \                    }\n                }\n\n                //Clear contents\
+    \ after loading\n                new FileWriter(purchaseFile).close();\n\n   \
+    \         } catch (Exception e) {\n                System.out.println(\"An error\
+    \ occurred.\");\n                e.printStackTrace();\n            }\n       \
+    \ }\n        System.out.println(\"Purchases were loaded!\");\n    }\n\n    private\
+    \ void savePurchases() {\n\n        if (purchaseFileReady()) {\n\n           \
+    \ try (PrintWriter writer = new PrintWriter(purchaseFile)) {\n               \
+    \ writer.printf(\"%.2f%n\", balance);\n\n                for (Purchase purchase\
+    \ : purchases) {\n                    writer.printf(\"%s,%.2f,%s%n\", purchase.getName(),\
+    \ purchase.getPrice(), purchase.getPurchaseType().toString());\n             \
+    \   }\n\n            } catch (FileNotFoundException e) {\n                System.out.println(\"\
+    Unable to load purchases: file not found.\");\n                e.printStackTrace();\n\
+    \                return;\n            }\n            purchases.clear();\n    \
+    \        System.out.println(\"Purchases were saved!\");\n        }\n\n\n    }\n\
+    \n    private void addIncome() {\n        double income = 0;\n\n        System.out.println(\"\
+    Enter income:\");\n        income = readDoubleInput();\n        balance += income;\n\
+    \        System.out.println(\"Income was added!\");\n    }\n\n    private void\
+    \ addPurchase() {\n        boolean addMore = true;\n        while (addMore) {\n\
+    \            int selection;\n            PurchaseType purchaseType;\n        \
+    \    String purchaseName;\n            double price;\n\n            System.out.print(\"\
+    \"\"\n                    \n                    Choose the type of purchase\n\
+    \                    1) Food\n                    2) Clothes\n               \
+    \     3) Entertainment\n                    4) Other\n                    5) Back\n\
+    \                    \"\"\");\n            selection = selectMenuItem();\n\n \
+    \           if (selection < 1) {\n                System.out.println(\"Invalid\
+    \ menu selection. Try again.\");\n                continue;\n            } else\
+    \ if (selection < 5) {\n                purchaseType = PurchaseType.values()[selection\
+    \ - 1];\n            } else {\n                return;\n            }\n\n    \
+    \        System.out.println(\"Enter purchase name:\");\n            purchaseName\
+    \ = scanner.nextLine();\n            System.out.println(\"Enter its price:\");\n\
+    \            price = readDoubleInput();\n            purchases.add(new Purchase(purchaseName,\
+    \ price, purchaseType));\n\n            if (price > balance) {\n             \
+    \   balance = 0;\n            } else {\n                balance -= price;\n  \
+    \          }\n            System.out.println(\"Purchase was added!\");\n     \
+    \   }\n    }\n\n    private void printBalance() {\n        System.out.printf(\"\
+    Balance: $%1$.2f%n\", balance);\n    }\n\n    private void selectPurchaseList()\
+    \ {\n        boolean selectAgain = true;\n        int selection;\n\n        while(selectAgain)\
+    \ {\n            System.out.print(\"\"\"\n                                   \
+    \     \n                        Choose the type of purchases\n               \
+    \         1) Food\n                        2) Clothes\n                      \
+    \  3) Entertainment\n                        4) Other\n                      \
+    \  5) All\n                        6) Back\n                        \"\"\");\n\
+    \            selection = selectMenuItem();\n            if (selection < 6) {\n\
+    \                listPurchases(PurchaseType.values()[selection - 1]);\n      \
+    \      } else selectAgain = false;\n        }\n    }\n\n    private void listPurchases(PurchaseType\
+    \ purchaseType) {\n        List<Purchase> purchaseBucket;\n        double bucketTotal\
+    \ = 0;\n\n        if (purchaseType == PurchaseType.All) {\n            purchaseBucket\
+    \ = purchases;\n        } else {\n            purchaseBucket = purchases.stream()\n\
+    \                    .filter(purchase -> purchase.getPurchaseType() == purchaseType)\n\
+    \                    .toList();\n        }\n\n        System.out.println(purchaseType.toString()\
+    \ + \":\");\n\n        if (purchaseBucket.size() == 0) {\n            System.out.println(\"\
+    The purchase list is empty.\");\n        } else {\n            for (Purchase p\
+    \ : purchaseBucket) {\n                System.out.printf(\"%s $%.2f%n\", p.getName(),\
+    \ p.getPrice());\n                bucketTotal += p.getPrice();\n            }\n\
+    \            System.out.printf(\"Total sum: $%.2f%n\", bucketTotal);\n       \
+    \ }\n    }\n\n    private double readDoubleInput() {\n        double input = -1;\n\
+    \        while (input < 0) {\n            try {\n                input = Double.parseDouble(scanner.nextLine());\n\
+    \                if (input < 0) {\n                    throw new IllegalArgumentException(\"\
+    Entry must be positive.\");\n                }\n            } catch (Exception\
+    \ e) {\n                System.out.println(\"Invalid entry. Enter a positive decimal\
+    \ value.\");\n            }\n        }\n        return input;\n    }\n\n    private\
+    \ int selectMenuItem() {\n        int selection = -1;\n\n        while(selection\
+    \ < 0) {\n            try {\n                selection = Integer.parseInt(scanner.nextLine());\n\
+    \            } catch (Exception e) {\n                selection = -1;\n      \
+    \          System.out.println(\"Invalid entry. Select a menu item by number.\"\
+    );\n            }\n        }\n        System.out.println();\n        return selection;\n\
+    \    }\n\n    private boolean purchaseFileReady() {\n        try {\n         \
+    \   purchaseFile.createNewFile();\n        } catch (Exception e) {\n         \
+    \   System.out.println(\"An error occurred in finding or creating purchases file.\"\
+    );\n            e.printStackTrace();\n            return false;\n        }\n \
+    \       return true;\n    }\n}\n"
+  learner_created: true
+- name: src/budget/PurchaseType.java
+  visible: true
+  text: |
+    package budget;
+
+    public enum PurchaseType {
+        Food,
+        Clothes,
+        Entertainment,
+        Other,
+        All
+    }
+  learner_created: true
+- name: purchases.txt
+  visible: true
+  learner_created: true
+- name: src/budget/Purchase.java
+  visible: true
+  text: |
+    package budget;
+
+    public class Purchase {
+
+
+
+        private String name;
+        private double price;
+        private PurchaseType purchaseType;
+
+        public Purchase(String name, double price, PurchaseType purchaseType) {
+            this.name = name;
+            this.price = price;
+            this.purchaseType = purchaseType;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public PurchaseType getPurchaseType() {
+            return purchaseType;
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/76/stages/425/implement#comment
 status: Unchecked
 record: -1
