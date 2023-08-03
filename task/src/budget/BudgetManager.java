@@ -1,21 +1,20 @@
 package budget;
 
+import java.io.*;
 import java.util.*;
 
 public class BudgetManager {
 
-
-
     private double balance;
-    private double totalPurchases;
     private Scanner scanner;
     ArrayList<Purchase> purchases;
+    File purchaseFile;
 
     public BudgetManager() {
         this.balance = 0;
-        this.totalPurchases = 0;
         this.purchases = new ArrayList<>();
         this.scanner = new Scanner(System.in);
+        this.purchaseFile = new File("purchases.txt");
     }
 
     /** @return Returns boolean indicating whether user wants to terminate the program. */
@@ -29,6 +28,8 @@ public class BudgetManager {
             case 2 -> addPurchase();
             case 3 -> selectPurchaseList();
             case 4 -> printBalance();
+            case 5 -> savePurchases();
+            case 6 -> loadPurchases();
             case 0 -> {
                 return false;
             }
@@ -47,8 +48,67 @@ public class BudgetManager {
                 2) Add purchase
                 3) Show list of purchases
                 4) Balance
+                5) Save
+                6) Load
                 0) Exit
                 """);
+    }
+
+    private void loadPurchases() {
+        if (purchaseFileReady()) {
+
+            try (Scanner fileReader = new Scanner(purchaseFile)) {
+                if (fileReader.hasNext()) {
+                    balance = Double.parseDouble(fileReader.nextLine());
+                }
+
+                while (fileReader.hasNext()) {
+                    String currentLine = fileReader.nextLine();
+
+                    try {
+                        String[] purchaseStrings = currentLine.split(",");
+                        Purchase purchase = new Purchase(purchaseStrings[0],
+                                Double.parseDouble(purchaseStrings[1]),
+                                PurchaseType.valueOf(purchaseStrings[2]));
+                        purchases.add(purchase);
+                    } catch (Exception e) {
+                        System.out.printf("Error processing purchase. Skipping line: %s%n", currentLine);
+                        e.printStackTrace();
+                    }
+                }
+
+                //Clear contents after loading
+                new FileWriter(purchaseFile).close();
+
+            } catch (Exception e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Purchases were loaded!");
+    }
+
+    private void savePurchases() {
+
+        if (purchaseFileReady()) {
+
+            try (PrintWriter writer = new PrintWriter(purchaseFile)) {
+                writer.printf("%.2f%n", balance);
+
+                for (Purchase purchase : purchases) {
+                    writer.printf("%s,%.2f,%s%n", purchase.getName(), purchase.getPrice(), purchase.getPurchaseType().toString());
+                }
+
+            } catch (FileNotFoundException e) {
+                System.out.println("Unable to load purchases: file not found.");
+                e.printStackTrace();
+                return;
+            }
+            purchases.clear();
+            System.out.println("Purchases were saved!");
+        }
+
+
     }
 
     private void addIncome() {
@@ -92,9 +152,7 @@ public class BudgetManager {
             purchaseName = scanner.nextLine();
             System.out.println("Enter its price:");
             price = readDoubleInput();
-
             purchases.add(new Purchase(purchaseName, price, purchaseType));
-            totalPurchases += price;
 
             if (price > balance) {
                 balance = 0;
@@ -130,6 +188,7 @@ public class BudgetManager {
             } else selectAgain = false;
         }
     }
+
     private void listPurchases(PurchaseType purchaseType) {
         List<Purchase> purchaseBucket;
         double bucketTotal = 0;
@@ -155,7 +214,6 @@ public class BudgetManager {
         }
     }
 
-
     private double readDoubleInput() {
         double input = -1;
         while (input < 0) {
@@ -171,7 +229,7 @@ public class BudgetManager {
         return input;
     }
 
-    public int selectMenuItem() {
+    private int selectMenuItem() {
         int selection = -1;
 
         while(selection < 0) {
@@ -184,5 +242,16 @@ public class BudgetManager {
         }
         System.out.println();
         return selection;
+    }
+
+    private boolean purchaseFileReady() {
+        try {
+            purchaseFile.createNewFile();
+        } catch (Exception e) {
+            System.out.println("An error occurred in finding or creating purchases file.");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

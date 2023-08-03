@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-02T07:21:07" hostname="Bobbis-MBP" time="0.088">
+<testsuite name="BudgetManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-03T01:28:30" hostname="Bobbis-MBP" time="0.124">
   <properties/>
-  <testcase name="start" classname="BudgetManagerTest" time="0.088"/>
+  <testcase name="start" classname="BudgetManagerTest" time="0.124"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 
@@ -10,6 +10,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 0
 
@@ -22,6 +24,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 0
 
@@ -34,6 +38,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 4
 
@@ -44,6 +50,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 0
 
@@ -56,6 +64,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 1
 
@@ -68,6 +78,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 4
 
@@ -78,6 +90,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 1
 
@@ -90,6 +104,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 4
 
@@ -100,6 +116,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 0
 
@@ -112,11 +130,13 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 1
 
 Enter income:
-> 600
+> 1000
 Income was added!
 
 Choose your action:
@@ -124,6 +144,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 2
 
@@ -137,9 +159,121 @@ Choose the type of purchase
 > 1
 
 Enter purchase name:
+> Almond 250g
+Enter its price:
+> 35.43
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
 > Milk
 Enter its price:
-> 3.5
+> 3.50
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> Red Fuji Apple
+Enter its price:
+> 5.99
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> Eggs
+Enter its price:
+> 3.99
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> FIJI Natural Artesian Water
+Enter its price:
+> 25.98
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> Hershey's milk chocolate bars
+Enter its price:
+> 8.54
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> Great Value Broccoli Florets
+Enter its price:
+> 1.00
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 1
+
+Enter purchase name:
+> Keystone Ground Bee
+Enter its price:
+> 6.28
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 2
+
+Enter purchase name:
+> Gildan LT
+Enter its price:
+> 8.61
 Purchase was added!
 
 Choose the type of purchase
@@ -153,7 +287,35 @@ Choose the type of purchase
 Enter purchase name:
 > Men's Dual Defense Crew Socks 12 Pairs
 Enter its price:
-> 13
+> 13.00
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 2
+
+Enter purchase name:
+> Wrangler Men's Stretch Cargo Pant
+Enter its price:
+> 19.97
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 3
+
+Enter purchase name:
+> LEGO DUPLO Town Farm Animals
+Enter its price:
+> 10.10
 Purchase was added!
 
 Choose the type of purchase
@@ -176,6 +338,62 @@ Choose the type of purchase
 3) Entertainment
 4) Other
 5) Back
+> 3
+
+Enter purchase name:
+> Skate rental
+Enter its price:
+> 30
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 4
+
+Enter purchase name:
+> Sensodyne Pronamel Toothpaste
+Enter its price:
+> 19.74
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 4
+
+Enter purchase name:
+> Chick-fil-A $10 Gift Card
+Enter its price:
+> 10
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
+> 4
+
+Enter purchase name:
+> Debt
+Enter its price:
+> 3.50
+Purchase was added!
+
+Choose the type of purchase
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) Back
 > 5
 
 
@@ -184,6 +402,58 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
+0) Exit
+> 5
+
+Purchases were saved!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+5) Save
+6) Load
+0) Exit
+> 0
+
+Bye!
+?[1;31m
+Start test 6?[0m
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+5) Save
+6) Load
+0) Exit
+> 6
+
+Purchases were loaded!
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+5) Save
+6) Load
+0) Exit
+> 4
+
+Balance: $785.64
+
+Choose your action:
+1) Add income
+2) Add purchase
+3) Show list of purchases
+4) Balance
+5) Save
+6) Load
 0) Exit
 > 3
 
@@ -195,52 +465,47 @@ Choose the type of purchases
 4) Other
 5) All
 6) Back
-> 1
-
-Food:
-Milk $3.50
-Total sum: $3.50
-
-Choose the type of purchases
-1) Food
-2) Clothes
-3) Entertainment
-4) Other
-5) All
-6) Back
-> 2
-
-Clothes:
-Men's Dual Defense Crew Socks 12 Pairs $13.00
-Total sum: $13.00
-
-Choose the type of purchases
-1) Food
-2) Clothes
-3) Entertainment
-4) Other
-5) All
-6) Back
-> 3
-
-Entertainment:
-Cinema $8.73
-Total sum: $8.73
-
-Choose the type of purchases
-1) Food
-2) Clothes
-3) Entertainment
-4) Other
-5) All
-6) Back
 > 5
 
 All:
+Almond 250g $35.43
 Milk $3.50
+Red Fuji Apple $5.99
+Eggs $3.99
+FIJI Natural Artesian Water $25.98
+Hershey's milk chocolate bars $8.54
+Great Value Broccoli Florets $1.00
+Keystone Ground Bee $6.28
+Gildan LT $8.61
 Men's Dual Defense Crew Socks 12 Pairs $13.00
+Wrangler Men's Stretch Cargo Pant $19.97
+LEGO DUPLO Town Farm Animals $10.10
 Cinema $8.73
-Total sum: $25.23
+Skate rental $30.00
+Sensodyne Pronamel Toothpaste $19.74
+Chick-fil-A $10 Gift Card $10.00
+Debt $3.50
+Total sum: $214.36
+
+Choose the type of purchases
+1) Food
+2) Clothes
+3) Entertainment
+4) Other
+5) All
+6) Back
+> 1
+
+Food:
+Almond 250g $35.43
+Milk $3.50
+Red Fuji Apple $5.99
+Eggs $3.99
+FIJI Natural Artesian Water $25.98
+Hershey's milk chocolate bars $8.54
+Great Value Broccoli Florets $1.00
+Keystone Ground Bee $6.28
+Total sum: $90.71
 
 Choose the type of purchases
 1) Food
@@ -257,6 +522,8 @@ Choose your action:
 2) Add purchase
 3) Show list of purchases
 4) Balance
+5) Save
+6) Load
 0) Exit
 > 0
 
