@@ -519,9 +519,6 @@ files:
         All
     }
   learner_created: true
-- name: purchases.txt
-  visible: true
-  learner_created: true
 - name: src/budget/Purchase.java
   visible: true
   text: |
@@ -554,6 +551,16 @@ files:
         }
     }
   learner_created: true
+- name: src/budget/BudgetPrinter.java
+  visible: true
+  learner_created: true
+- name: purchases.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/76/stages/425/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Tue, 08 Aug 2023 03:09:33 UTC"
+record: 5

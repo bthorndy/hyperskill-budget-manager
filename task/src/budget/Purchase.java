@@ -2,8 +2,6 @@ package budget;
 
 public class Purchase {
 
-
-
     private String name;
     private double price;
     private PurchaseType purchaseType;
@@ -25,4 +23,6 @@ public class Purchase {
     public PurchaseType getPurchaseType() {
         return purchaseType;
     }
+
+
 }
